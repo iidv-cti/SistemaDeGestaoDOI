@@ -11,15 +11,25 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private service: LoginService,private router: Router) { }
+  constructor(private service: LoginService, private router: Router) { }
 
-  user$: User;
+  user: User = new User();
+  status;
+  ngOnInit() {
+    this.user.system = '7073786578679736000';
+  }
 
-  ngOnInit() {}
+  logar() {
 
-  logar(){
-    this.router.navigate(['artigos']);
-    //this.service.fazerLogin().subscribe((data) => this.user$ = data);
+    this.service.fazerLogin(this.user).subscribe(
+      success => {
+        this.status = success
+      },
+      error => {
+        console.log(error);
+      },
+      () => { }
+    );
   }
 
 }

@@ -1,5 +1,6 @@
 export class User{
-    private id: number;
-    private login: string;
-    private senha: string;
+
+    private cpf: string;
+    private password: string;
+     system:string;
 }

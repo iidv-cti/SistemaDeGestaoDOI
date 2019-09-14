@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../models/User';
+import { tap, delay, take } from 'rxjs/operators';
+import { stringify } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  loginUrl: any = "https://localhost:8080/user";
+  loginUrl: any = 'https://api.institutoidv.org/api/v1.0/users/verificarLogin';
 
-  constructor(private http:HttpClient) { }
-  
+  constructor(private http: HttpClient) { }
   // Chamar a api para login de usuario
-  fazerLogin(){
-    return this.http.get<User>(this.loginUrl);
-  }  
+  fazerLogin(user) {
+    return this.http.get(this.loginUrl, user).pipe(take(1));
+  } 
 }

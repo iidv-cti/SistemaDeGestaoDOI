@@ -1,15 +1,21 @@
 <div class="example-container">
     <mat-form-field>
-        <input matInput placeholder="Login">
+        <input matInput placeholder="Cpf" [(ngModel)]="user.cpf">
     </mat-form-field>
     
     <mat-form-field>
-        <input matInput placeholder="Senha" type="password">
+        <input matInput placeholder="Senha" type="password" [(ngModel)]="user.password">
     </mat-form-field>
 
     <button class="btn btn-primary"
         (click)="logar()"
     >Entrar</button>
     <button mat-button>Cadastrar</button>
+    <div class="alert alert-danger" role="alert" *ngIf="status">
+     {{ status.message }}
+    </div>
+    <pre>
+        {{ user | json }}
+    </pre>
 
 </div>
