@@ -1,0 +1,9 @@
+<div *ngFor="let trabalho of trabalho$ | async as trabalhos">
+    <ul *ngFor="let item of trabalhos">
+        <li>
+            {{ item.nome }}
+        </li>
+    </ul>
+</div>
+
+<router-outlet></router-outlet>

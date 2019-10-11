@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { LoginModule } from './login/login.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ArtigoModule } from './artigo/artigo.module';
+import { AuthService } from './shared/services/auth.service';
+import { TrabalhoModule } from './trabalho/trabalho.module';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,9 @@ import { ArtigoModule } from './artigo/artigo.module';
     MaterialModule,
     HttpClientModule,
     LoginModule,
-    ArtigoModule
+    TrabalhoModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
