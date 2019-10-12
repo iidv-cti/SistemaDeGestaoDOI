@@ -1,14 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
 import { MaterialModule } from './material/material.module';
 import { LoginModule } from './login/login.module';
-import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './shared/services/auth.service';
 import { TrabalhoModule } from './trabalho/trabalho.module';
+import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [

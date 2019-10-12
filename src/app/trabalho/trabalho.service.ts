@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient } from '@angular/common/http';
 import { take } from 'rxjs/operators';
+import { api } from '../config/api';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,6 @@ export class TrabalhoService {
   ) { }
 
   getTrabalhos() {
-    return this.http.get('').pipe(take(1));
+    return this.http.get(api).pipe(take(1));
   }
 }

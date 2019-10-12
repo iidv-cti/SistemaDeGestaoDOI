@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from './login.service';
-import { Observable } from 'rxjs';
-import { User } from '../models/User';
+
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/services/auth.service';
+import { User } from '../models/User';
 
 @Component({
   selector: 'app-login',
@@ -18,20 +17,19 @@ export class LoginComponent implements OnInit {
 
   private user: User = new User();
 
-  ngOnInit() {
-    this.user.system = '7073786578679736000';
-  }
+  ngOnInit() {}
 
   logar() {
-    this.service.fazerLogin(this.user).subscribe(
-      success => {
-        console.log(success);
-      },
-      error => {
-        console.log(error);
-      },
-      () => { }
-    );
+    this.service.fazerLogin(this.user)
+      .subscribe(
+        success => {
+          console.log(success.headers.get('Authorization'));
+        },
+        error => {
+          console.log(error);
+        },
+        () => { }
+      );
   }
 
 }
