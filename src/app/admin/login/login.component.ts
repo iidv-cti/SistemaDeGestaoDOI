@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../shared/services/auth.service';
-import { User } from '../models/User';
+import { User } from '../../models/User';
 
 @Component({
   selector: 'app-login',
@@ -14,19 +13,22 @@ export class LoginComponent implements OnInit {
     private service: AuthService,
     private router: Router
   ) { }
-
+  erro: string;
   private user: User = new User();
 
   ngOnInit() {}
 
-  logar() {
+  onLogar() {
     this.service.fazerLogin(this.user)
       .subscribe(
         success => {
-          console.log(success.headers.get('Authorization'));
+          this.service.setToken(success.headers.get('Authorization'));
+          this.service.setAutenticado(true);
+          this.router.navigate(['admin']);
         },
         error => {
-          console.log(error);
+          this.erro = error['error'];
+          
         },
         () => { }
       );

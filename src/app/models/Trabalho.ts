@@ -1,4 +1,4 @@
-export class Artigo{
+export class Trabalho{
 
     nome: string;
 

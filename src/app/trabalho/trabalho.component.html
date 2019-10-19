@@ -1,9 +1,50 @@
-<div *ngFor="let trabalho of trabalho$ | async as trabalhos">
-    <ul *ngFor="let item of trabalhos">
-        <li>
-            {{ item.nome }}
-        </li>
-    </ul>
+<div class="header">
+  <h1 class="title">
+    Trabalhos
+  </h1>
 </div>
-
-<router-outlet></router-outlet>
+<div class="content">
+  <div class="row">
+    <div class="col-12 col-md-6 trabalhos">
+      <ul *ngFor="let item of trabalhos">
+        <li
+          [routerLink]="['/trabalhos', item.id]"
+          routerLinkActive="ativo"
+          class="lista"
+        >
+          <h1 class="titulo">{{ item.tituloTrabalho }}</h1>
+          <div class="info">
+            <p class="instituicao">
+              {{ item.instituicao }}
+            </p>
+            <p class="tipo">
+              {{ item.tipoTrabalho }}
+            </p>
+          </div>
+          <div class="data">
+            <p>Adiconado em {{ item.dataAdicionado | date: "dd/MM/yyyy" }}</p>
+          </div>
+        </li>
+      </ul>
+      <div class="controles">
+        <button
+          class="button"
+          [ngClass]="{ 'button-disabled': isFirst }"
+          (click)="prevPage()"
+        >
+          <
+        </button>
+        <button
+          class="button"
+          [ngClass]="{ 'button-disabled': isLast }"
+          (click)="nextPage()"
+        >
+          >
+        </button>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 detalhes">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

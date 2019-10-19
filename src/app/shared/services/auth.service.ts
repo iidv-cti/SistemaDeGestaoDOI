@@ -8,7 +8,15 @@ import { api } from '../../config/api';
   providedIn: 'root'
 })
 export class AuthService {
+  private token: string;
+  private usuarioAutenticado: boolean = false;
 
+  setToken(token) {
+    this.token = token;
+  }
+  getToken() {
+    return this.token;
+  }
   constructor(
     private http: HttpClient
   ) { }
@@ -18,6 +26,14 @@ export class AuthService {
       observe: 'response',
       responseType: 'text'
     }).pipe(take(1));
+  }
+
+  usuarioEstaAutenticado(){
+    return this.usuarioAutenticado;
+  }
+
+  setAutenticado(bool) {
+    this.usuarioAutenticado = bool;
   }
   
 }

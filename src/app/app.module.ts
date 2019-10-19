@@ -5,11 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MaterialModule } from './material/material.module';
-import { LoginModule } from './login/login.module';
 import { AuthService } from './shared/services/auth.service';
 import { TrabalhoModule } from './trabalho/trabalho.module';
-import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,11 +14,9 @@ import { RouterOutlet } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    AppRoutingModule,
     HttpClientModule,
-    LoginModule,
     TrabalhoModule
   ],
   providers: [AuthService],

@@ -1,0 +1,82 @@
+<div class="header">
+  <h1 class="titulo">{{ trabalho?.tituloTrabalho }}</h1>
+  <div class="info">
+    <p class="tipo">{{ trabalho?.tipoTrabalho }}</p>
+    <p class="instituicao">{{ trabalho?.instituicao }}</p>
+  </div>
+</div>
+<div *ngIf="trabalho" class="trabalho">
+  <p class="autores-title">Autores</p>
+  <div class="autores">
+    <ul class="lista">
+      <li class="autor" *ngFor="let autor of trabalho.autores">
+        <p>
+          <span class="key">
+            Nome:
+          </span>
+          <span class="value">
+            {{ autor.nome }}
+          </span>
+        </p>
+        <p>
+          <span class="key">
+            Email:
+          </span>
+          <span class="value">
+            {{ autor.email }}
+          </span>
+        </p>
+        <p>
+          <span class="key">
+            Instituição:
+          </span>
+          <span class="value">
+            {{ autor.instituicao }}
+          </span>
+        </p>
+        <p>
+          <span class="key">
+            Lattes:
+          </span>
+          <span class="value">
+            {{ autor.linkLattes }}
+          </span>
+        </p>
+        <p>
+          <span class="key">
+            Cargo:
+          </span>
+          <span class="value">
+            {{ autor.cargo }}
+          </span>
+        </p>
+        <p>
+          <span class="key">
+            Titulo:
+          </span>
+          <span class="value">
+            {{ autor.titulo }}
+          </span>
+        </p>
+        <p>
+          <span class="key">
+            Resumo:
+          </span>
+          <span class="value">
+            {{ autor.resumo }}
+          </span>
+        </p>
+      </li>
+    </ul>
+  </div>
+  <p class="resumo-title">Resumo</p>
+  <p class="resumo">{{ trabalho.resumoTrabalho }}</p>
+
+  <p class="data">
+    adicionado em {{ trabalho.dataAdicionado | date: "dd/MM/yyyy" }}
+    por
+    <span class="user">
+      {{ trabalho.usuario.nome }}
+    </span>
+  </p>
+</div>

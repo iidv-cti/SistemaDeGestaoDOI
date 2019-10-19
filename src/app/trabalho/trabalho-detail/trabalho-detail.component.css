@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #abd8cd;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.titulo {
+    font-size: 1.7em;
+    font-weight: 550;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: #0008;
+}
+
+.trabalho {
+    padding: 10px 20px;
+}
+
+.autores-title {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+.autores {
+    padding: 0 20px;
+    overflow: scroll;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #F7F7F7;
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #dad7d7;
+}
+
+.lista {
+    border-radius: 5px;
+    padding: 10px 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.autor {
+    background-color: rgba(255,255,255,0.4);
+    padding: 10px;
+    margin-right: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.key {
+    font-weight: bold;
+}
+
+
+.resumo-title {
+    font-size: 1.6em;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.data {
+    font-size: 1em;
+    margin-top: 20px;
+    text-align: right;
+    color: #0008;
+}

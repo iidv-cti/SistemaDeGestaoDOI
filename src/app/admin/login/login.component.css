@@ -1,0 +1,23 @@
+.example-container {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.example-container > * {
+  width: 100%;
+}
+
+.formulario {
+  max-width: 400px;
+  border: 2px solid #d0d0d0;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.erro {
+  margin-top: 20px;
+}
